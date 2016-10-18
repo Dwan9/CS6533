@@ -1,5 +1,6 @@
+
 #include "glsupport.h"
-#include <GL/freeglut.h>
+#include <GL/glut.h>
 
 void display(void) {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -22,12 +23,12 @@ int main(int argc, char **argv) {
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(500, 500);
     glutCreateWindow("CS-6533");
-
-    glewInit();
     
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutIdleFunc(idle);
+    
+    glewInit();
     
     init();
     glutMainLoop();
